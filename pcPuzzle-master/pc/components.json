@@ -1,0 +1,19 @@
+{
+    "motherboard": {
+        "name": "マザーボード",
+        "description": "様々な部品をつなぐ基盤",
+        "source": "./../images/mother.png"
+    },
+    "components": [
+        { "name": "CPU", "x": 210, "y": -80, "lineX": 48, "lineY": 2, "description": "パソコンの演算装置、人間で例えると脳", "source": "./../images/part0.png" },
+        { "name": "CPUファン", "x": 353, "y": -100, "lineX": 48, "lineY": 2, "description": "CPUを冷やす部品", "source": "./../images/part1.png" },
+        { "name": "GPU", "x": 23, "y": -100, "lineX": -28, "lineY": -23, "description": "映像を処理する部品", "source": "./../images/part2.png" },
+        { "name": "HDD", "x": -97, "y": 330, "lineX": -60, "lineY": 67, "description": "データを保存する記憶装置", "source": "./../images/part3.png" },
+        { "name": "ヒートシンク", "x": -127, "y": 162, "lineX": -68, "lineY": 42, "description": "熱を逃がす部品", "source": "./../images/part4.png" },
+        { "name": "メモリ", "x": 373, "y": 40, "lineX": 67, "lineY": 42, "description": "作業に必要なデータを並べる、主記憶装置", "source": "./../images/part5.png" },
+        { "name": "メモリ", "x": 373, "y": 200, "lineX": 67, "lineY": 65, "description": "作業に必要なデータを並べる、主記憶装置", "source": "./../images/part6.png" },
+        { "name": "DVD(BD)プレイヤー", "x": 63, "y": 330, "lineX": -60, "lineY": 67, "description": "DVDやBDを再生する装置", "source": "./../images/part7.png" },
+        { "name": "電源", "x": -200, "y": -38, "lineX": -83, "lineY": -7, "description": "電気を変換して供給する装置", "source": "./../images/part8.png" },
+        { "name": "SSD", "x": 223, "y": 330, "lineX": -60, "lineY": 67, "description": "従来より高速な記憶装置", "source": "./../images/part9.png" }
+    ]
+}
