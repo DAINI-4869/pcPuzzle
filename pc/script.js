@@ -308,35 +308,7 @@ document.addEventListener('DOMContentLoaded',() => {
         canvas.addEventListener('mousedown', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('resize', function(){
-            var width = window.innerWidth;
-            var height = window.innerHeight;
-            
-            // 画面サイズが変更されたときの処理
-            if(width*height == canvas.width*canvas.height){
-                bgX = (canvas.width - motherImg.width) / 2;
-                bgY = (canvas.height - motherImg.height) / 2;
-        
-
-            }
-            drawImages();
-            // 拡大縮小の判定（必要に応じて実装）
-            detectZoom();
-
-        });
-        function detectZoom() {
-            // ブラウザのズームレベルを取得
-            var zoomLevel = Math.round((window.outerWidth / window.innerWidth) * 100);
-            
-            // ズームレベルを表示
-            console.log('Zoom level: ' + zoomLevel + '%');
-            
-            console.log(canvasOffset)
-    
-        }
-        // 初回ロード時にズームレベルを検知
-        detectZoom();
-
+        window.addEventListener('resize', resizeCanvas);
 
     }).catch(error => {
         console.error('Failed to load some images', error);
