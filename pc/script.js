@@ -250,7 +250,6 @@ document.addEventListener('DOMContentLoaded',() => {
             }
         }
 
-        if (isDragging && selectedImage) {
         if (selectedImage) {
             selectedImage.x = mouseX - canvasOffset.x;
             selectedImage.y = mouseY - canvasOffset.y;
