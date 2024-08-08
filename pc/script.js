@@ -241,8 +241,10 @@ document.addEventListener('DOMContentLoaded',() => {
             });
 
             // マザーボードの説明表示
-            if (mouseX >= bgX && mouseX <= bgX + motherImg.width &&
-                mouseY >= bgY && mouseY <= bgY + motherImg.height) {
+            if (mouseX >= bgX && 
+                mouseX <= bgX + motherImg.width &&
+                mouseY >= bgY && 
+                mouseY <= bgY + motherImg.height) {
                 displayedName = motherName;
                 displayedDescription = motherDescription;
             }
@@ -309,7 +311,36 @@ document.addEventListener('DOMContentLoaded',() => {
         canvas.addEventListener('mousedown', handleMouseDown);
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('mousemove', handleMouseMove);
-        window.addEventListener('resize', resizeCanvas);
+
+        function detectZoom() {
+            // ブラウザのズームレベルを取得
+            var zoomLevel = Math.round((window.outerWidth / window.innerWidth) * 100);
+            
+            // ズームレベルを表示
+            console.log('Zoom level: ' + zoomLevel + '%');
+            
+    
+        }
+        // 初回ロード時にズームレベルを検知
+        detectZoom();
+
+
+        window.addEventListener('resize', function(){
+         // 画像の幅と高さをウィンドウに合わせて調整
+            if(window.innerWidth / window.innerHeight > canvas.width / canvas.height){
+            window.innerWidth  = "100%";
+            window.innerHeight = auto;
+           }else{
+            window.innerWidth = auto;
+            window.innerHeight = "100%";
+           }
+           
+            drawImages();
+            // 拡大縮小の判定（必要に応じて実装）
+
+        });
+  
+
 
     }).catch(error => {
         console.error('Failed to load some images', error);
