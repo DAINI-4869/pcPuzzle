@@ -263,6 +263,17 @@ document.addEventListener('DOMContentLoaded',() => {
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
+
+        // 画像を中央に配置
+        bgX = (canvas.width - motherImg.width) / 2;
+        bgY = (canvas.height - motherImg.height) / 2;
+
+        // 各画像のglX, glYも再計算
+        images.forEach((img, index) => {
+            img.glX = bgX + targetCoordsX[index];
+            img.glY = bgY + targetCoordsY[index];
+        });
+
         drawImages();
     }
 
@@ -311,6 +322,8 @@ document.addEventListener('DOMContentLoaded',() => {
         canvas.addEventListener('mouseup', handleMouseUp);
         canvas.addEventListener('mousemove', handleMouseMove);
 
+        window.addEventListener('resize',resizeCanvas);
+
         function detectZoom() {
             // ブラウザのズームレベルを取得
             var zoomLevel = Math.round((window.outerWidth / window.innerWidth) * 100);
@@ -324,20 +337,7 @@ document.addEventListener('DOMContentLoaded',() => {
         detectZoom();
 
 
-        window.addEventListener('resize', function(){
-         // 画像の幅と高さをウィンドウに合わせて調整
-            if(window.innerWidth / window.innerHeight > canvas.width / canvas.height){
-            window.innerWidth  = "100%";
-            window.innerHeight = auto;
-           }else{
-            window.innerWidth = auto;
-            window.innerHeight = "100%";
-           }
-           
-            drawImages();
-            // 拡大縮小の判定（必要に応じて実装）
 
-        });
   
 
 
