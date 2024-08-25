@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded',() => {
         });
     }
     
-    const imageSources = []; // 画像のパス
+    const imageSources = []; // 画像のパスaaaa
     for (let i = 0; i < 10; i++) {
         imageSources[i] = './../images/part${i}.png';
     }
